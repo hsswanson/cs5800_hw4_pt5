@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
++class Folder{
+-subfolders:ArrayList<Folder>
+-files:ArrayList<File>
++addSubfolder(Folder folder):void
++addFile(File file):void
++getSubfolders():ArrayList<Folder>
++getFiles():ArrayList<File>
++deleteSubfolder(Folder folder):void
++deleteFile(File file):void
++toString():String
+}
+
++class File{
+-fileName:String
++setFileName(String fileName):void
++getFileName():String
++toString():String
+}
+
+Folder "1"*--"*" File
+Folder "1"*--"*" Folder
+@enduml
